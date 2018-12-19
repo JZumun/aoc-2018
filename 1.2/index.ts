@@ -1,4 +1,4 @@
-const fn = (input, visited = {}, freq = 0) => {
+const fn = (input: string[], visited = {}, freq = 0) : number => {
 	for (const x of input) {
 		freq += Number.parseInt(x);
 		if (visited[freq]) return freq;
@@ -8,4 +8,4 @@ const fn = (input, visited = {}, freq = 0) => {
 	return fn(input, visited, freq);
 }
 
-module.exports = fn;
+export default fn;

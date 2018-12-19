@@ -1,4 +1,4 @@
-const countLetters = str => {
+const countLetters = (str: string) => {
 	const letters = {};
 	for (const letter of str) {
 		letters[letter] = (letters[letter] || 0) + 1;
@@ -6,15 +6,15 @@ const countLetters = str => {
 	return letters;
 }
 
-module.exports = input => {
+export default input => {
 	let twos = 0;
 	let threes = 0;
 
 	for (const id of input) {
-		letters = countLetters(id);
+		const letters = countLetters(id);
 		const counts = Object.values(letters);
-		twos += counts.includes(2);
-		threes += counts.includes(3);
+		twos += counts.includes(2) ? 1 : 0;
+		threes += counts.includes(3) ? 1 : 0;
 	}
 
 	return twos * threes;
